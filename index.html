@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payroll System | Front-End Enterprise Application</title>
+  <meta name="description" content="Automated Payroll Processing System front-end web application with role-based access control, statutory deductions, salary calculation, payslip generation, and leave management." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">PS</div>
+        <div class="brand-text">
+          <h2>PAYROLL SYSTEM</h2>
+          <span>Web Application</span>
+        </div>
+      </div>
+
+      <div class="nav-section-title">DHARMENDIRA'S TOPICS</div>
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <button data-tab="uc1-calculate-salary">
+            <span>⚡ Calculate Salary</span>
+            <span class="author-badge">UC 1</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-tab="uc4-master-data">
+            <span>📂 Master & Salary Data</span>
+            <span class="author-badge">UC 4</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-tab="uc5-statutory-tax">
+            <span>🏛️ Statutory Tax Rules</span>
+            <span class="author-badge">UC 5</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav-section-title" style="margin-top: 1.5rem;">BALAMURUGAN'S TOPICS</div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <button data-tab="uc2-generate-payslip">
+            <span>📄 Generate Payslip</span>
+            <span class="author-badge">UC 2</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-tab="uc3-leave-attendance">
+            <span>📅 Leave & Attendance</span>
+            <span class="author-badge">UC 3</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-tab="uc6-user-roles">
+            <span>🔐 User Roles & Access</span>
+            <span class="author-badge">UC 6</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Active Role Switcher -->
+      <div class="user-profile-box">
+        <label for="global-role-select">Current Active Role Simulator:</label>
+        <select id="global-role-select">
+          <option value="HR Administrator">HR Administrator</option>
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
+          <option value="System Administrator">System Administrator</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <!-- Top Bar Header -->
+      <header class="top-header">
+        <div class="page-title">
+          <h1>Automated Payroll Management System</h1>
+          <p>Front-End Prototype • Dharmendira Prasad P (24MIS0073) & Balamurugan D (24MIS0096)</p>
+        </div>
+        <div class="header-actions">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span id="current-role-badge">HR Administrator</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Body -->
+      <main class="content-body">
+        <!-- Use Case Panels -->
+        <section id="uc1-calculate-salary" class="view-panel active"></section>
+        <section id="uc4-master-data" class="view-panel"></section>
+        <section id="uc5-statutory-tax" class="view-panel"></section>
+        <section id="uc2-generate-payslip" class="view-panel"></section>
+        <section id="uc3-leave-attendance" class="view-panel"></section>
+        <section id="uc6-user-roles" class="view-panel"></section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Printable Payslip Modal Popup -->
+  <div id="payslip-modal" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" onclick="BalamuruganModules.closePayslipModal()">✕</button>
+      <div id="payslip-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/dharmendira_modules.js"></script>
+  <script src="js/balamurugan_modules.js"></script>
+
+</body>
+</html>
