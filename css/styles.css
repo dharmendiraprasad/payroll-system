@@ -6,12 +6,17 @@
 
 :root {
   /* "Ink Wash" Palette Tokens */
-  --ink-charcoal: #4a4a4a;       /* Deep Charcoal Ink */
-  --ink-silver: #cbcbcb;         /* Soft Silver Grey */
-  --ink-sunlight: #ffffe3;       /* Warm Sunlight Cream Yellow */
-  --ink-slate: #6d8196;          /* Slate Blue Wash */
-  --ink-dark: #2a2a2a;           /* Abyssal Ink Dark */
-  
+  --ink-charcoal: #4a4a4a;
+  /* Deep Charcoal Ink */
+  --ink-silver: #cbcbcb;
+  /* Soft Silver Grey */
+  --ink-sunlight: #ffffe3;
+  /* Warm Sunlight Cream Yellow */
+  --ink-slate: #6d8196;
+  /* Slate Blue Wash */
+  --ink-dark: #2a2a2a;
+  /* Abyssal Ink Dark */
+
   /* Glassmorphism & Blending Surface Tokens */
   --glass-bg-body: #1e1e1e;
   --glass-bg-sidebar: rgba(42, 42, 42, 0.82);
@@ -74,11 +79,11 @@ body::before {
   right: -150px;
   width: 750px;
   height: 750px;
-  background: radial-gradient(circle at 50% 50%, 
-    rgba(255, 255, 227, 0.45) 0%, 
-    rgba(255, 255, 227, 0.2) 25%, 
-    rgba(109, 129, 150, 0.25) 50%, 
-    rgba(74, 74, 74, 0) 75%);
+  background: radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 227, 0.45) 0%,
+      rgba(255, 255, 227, 0.2) 25%,
+      rgba(109, 129, 150, 0.25) 50%,
+      rgba(74, 74, 74, 0) 75%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -94,10 +99,10 @@ body::after {
   left: -150px;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, 
-    rgba(109, 129, 150, 0.35) 0%, 
-    rgba(203, 203, 203, 0.12) 50%, 
-    rgba(0, 0, 0, 0) 75%);
+  background: radial-gradient(circle,
+      rgba(109, 129, 150, 0.35) 0%,
+      rgba(203, 203, 203, 0.12) 50%,
+      rgba(0, 0, 0, 0) 75%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -105,8 +110,15 @@ body::after {
 }
 
 @keyframes sunPulse {
-  0% { transform: scale(1) translate(0, 0); opacity: 0.85; }
-  100% { transform: scale(1.1) translate(-20px, 20px); opacity: 1; }
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: scale(1.1) translate(-20px, 20px);
+    opacity: 1;
+  }
 }
 
 /* App Layout Structure */
@@ -342,8 +354,15 @@ body::after {
 }
 
 @keyframes inkFadeIn {
-  from { opacity: 0; transform: translateY(6px) scale(0.99); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Grid Layouts */
@@ -366,7 +385,10 @@ body::after {
 }
 
 @media (max-width: 1024px) {
-  .grid-2, .grid-3, .grid-4 {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 }
@@ -394,7 +416,7 @@ body::after {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, rgba(255,255,227,0), var(--glass-border-sun), rgba(255,255,227,0));
+  background: linear-gradient(90deg, rgba(255, 255, 227, 0), var(--glass-border-sun), rgba(255, 255, 227, 0));
 }
 
 .card:hover {
@@ -769,9 +791,12 @@ body::after {
   body * {
     visibility: hidden;
   }
-  .payslip-paper, .payslip-paper * {
+
+  .payslip-paper,
+  .payslip-paper * {
     visibility: visible;
   }
+
   .payslip-paper {
     position: absolute;
     left: 0;
@@ -781,5 +806,3 @@ body::after {
     box-shadow: none;
   }
 }
-/ *   t e s t   c o m m e n t   * /  
- 
