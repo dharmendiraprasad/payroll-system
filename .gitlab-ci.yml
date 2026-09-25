@@ -1,0 +1,26 @@
+image: maven:3.9-eclipse-temurin-17
+
+variables:
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dmaven.repo.local=.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN"
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - build
+  - test
+
+build-job:
+  stage: build
+  script:
+    - mvn compile --batch-mode
+
+test-job:
+  stage: test
+  script:
+    - mvn test --batch-mode
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
