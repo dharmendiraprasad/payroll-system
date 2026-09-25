@@ -1,25 +1,28 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9'
+        jdk 'JDK-17'
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        stage('Build') {
+
+        stage('Build & Test') {
             steps {
-                echo 'Building Payroll System...'
+                sh 'mvn clean verify --batch-mode'
             }
         }
-        stage('Test') {
+
+        stage('Archive Artifacts') {
             steps {
-                echo 'Running Unit Tests for Payroll System...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying Payroll System application...'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                junit '**/target/surefire-reports/*.xml'
             }
         }
     }
